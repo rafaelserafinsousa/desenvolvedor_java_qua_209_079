@@ -7,56 +7,52 @@ public class App {
         Scanner leia = new Scanner(System.in);
  
         String nome;
-        int idade, opcao;
+        int idade, opcao, idadeMinima = 0;
 
-            System.out.print("informe nome: ");
-            nome = leia.nextLine();
-            System.out.print("informe idade: ");
-            idade = leia.nextInt();
+        System.out.print("informe nome: ");
+        nome = leia.nextLine();
+        System.out.print("\ninforme idade: ");
+        idade = leia.nextInt();
 
-        do {
+        do {  
+            System.out.println("Sala 3- PeppaPig (livre)");
+            System.out.println("Sala 2- StarWars III (+12)");
+            System.out.println("Sala 1- Hereditário (+16)");
+            System.out.println("Sala 4- Jogos Vorazes (+14)");
+            System.out.println("Sala 5- Extermínio 3 (+18)");
+            System.out.print("Escolha uma sala: ");
 
-            System.out.println("\n1- filme16");
-            System.out.println("2- filme12");
-            System.out.println("3- filmelivre ");
-            System.out.println("4- filme14");
-            System.out.println("5- filme18");
-            System.out.println("Sair");
             opcao = leia.nextInt();
 
             switch (opcao) {
                 case 1:
-                    if (idade >= 16) {
-                        System.out.println(nome + "ingresso liberado\n saindo...");
-                    } else {
-                        System.out.println("Esse filme pode ser inadequado para sua faixa etária!\n por favor escolha outro filme");
-                    }
+                        break;
+
                 case 2:
-                    if (idade >= 12) {
-                        System.out.println(nome + "ingresso liberado\n saindo...");
-                    } else {
-                        System.out.println("Esse filme pode ser inadequado para sua faixa etária!\n por favor escolha outro filme");
-                    }
+                idadeMinima = 12;
+                        break;
+
                 case 3:
-                        System.out.println(nome + "ingresso liberado\n saindo...");
+                 idadeMinima = 16;
+                    break;
                 case 4:
-                    if (idade >= 14) {
-                        System.out.println(nome + "ingresso liberado\n saindo...");
-                    } else {
-                        System.out.println("Esse filme pode ser inadequado para sua faixa etária!\n por favor escolha outro filme");
-                    }
+                idadeMinima = 14;
+                    break;
                 case 5:
-                    if (idade >= 18) {
-                        System.out.println(nome + "ingresso liberado\n saindo...");
-                    } else {
-                        System.out.println("Esse filme pode ser inadequado para sua faixa etária!\n por favor escolha outro filme");
-                    }
+                    idadeMinima = 18;
                     break;
             
                 default:
-                    break;
+                System.out.println("sala inexistente");
             }
-        } while (opcao != 6);
+            if (idade > idadeMinima) {
+                System.out.println(nome + " seu ingresso foi liberado!");
+                System.out.println("Aproveite o filme!");
+            } else {
+                System.out.println("Esse filme pode ser inadequado para sua faixa etária!\nPor favor escolha outro filme!\n");
+            }
+
+        } while (idade <= idadeMinima);
         leia.close();
     }
 }

@@ -24,6 +24,8 @@ public class App {
 
                 imc = peso/(altura*altura);
 
+                System.out.println("O IMC de "+ nome + " é " + String.format("%.2f", imc)+ "." );
+
             if (imc < 18.5 ) System.out.print(nome + " esta abaixo do normal.\n");
             else if (imc <= 18.5 && imc >= 24.9) {
                 System.out.println(nome + " esta com peso normal\n");}
