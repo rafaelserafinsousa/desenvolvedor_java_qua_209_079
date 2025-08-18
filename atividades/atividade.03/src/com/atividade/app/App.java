@@ -14,7 +14,7 @@ public class App {
         banco.cpf = leia.nextLine();
 
         do {
-            System.out.println(" --------------------\nBanco Labubu da Silva\n --------------------");
+            System.out.println(" --------------------\nBanco\n --------------------");
             System.out.println("1-Exibir dados da conta\n2-Fazer saque\n3-Fazer saque\n4-Sair do programa");
             System.out.print(" Informe a opção desejada: ");
             opcao = leia.nextInt();
