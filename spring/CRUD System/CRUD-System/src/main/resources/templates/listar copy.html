@@ -47,7 +47,6 @@
 
 <!-- final nav bar -->
 
-
 <!-- listar usuarios -->
                      <div class="container-lg">
     <div class="table-responsive">
@@ -57,7 +56,7 @@
                     <div class="col-sm-8"><h2><b>Usuarios</b></h2></div>
                     <div class="col-sm-4">
                         <button type="button" class="btn btn-info add-new">
-                            <i class="fa fa-plus"></i> Adicionar
+                            <i class="fa fa-plus" ></i> Adicionar
                         </button>
                     </div>
                 </div>
@@ -82,7 +81,8 @@
                             <!-- <a class="add" title="adicionar" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
                             <a class="btn btn-waning" title="editar" role="button" th:ref="${(#mvc.url('CC#alterarUsuario').arg(0, usuario.idPessoa)).build()}" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a> -->
                             <div> <a class="btn btn-waning" role="button" th:href="@{'/alterarUsuario/'+ ${usuario.idPessoa}}" data-toggle="tooltip"><i class="material-icons">&#xE254</i></a></div>
-                            <div> <a class="btn btn-danger" role="button" th:href="@{'/confirmarExclusao/'+ ${usuario.idPessoa}}" data-toggle="tooltip"><i class="material-icons">&#xE872</i></a></div>
+                            <div> <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Excluir"> <i class="material-icons">&#xE872</i></a></div> </button> 
+                            <!-- <a class="btn btn-" role="button" th:href="@{'/confirmarExclusao/'+ ${usuario.idPessoa}}" data-toggle="tooltip"> -->
                             <!-- <a class="delete" title="deletar" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a> -->
                         </td>
                     </tr>
@@ -93,6 +93,27 @@
 </div>
 </div>
 <!-- lista -->
+<!-- Modal -->
+<div class="modal fade" id="Excluir" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel"></h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
     <script src="js/scriptList.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
   </body>
