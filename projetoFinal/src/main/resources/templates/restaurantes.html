@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br" xmlns:th="https://thymeleaf.org" xmlns:layout="https://ultraq.net.nz/thymeleaf/layout">
+
 <head>
   <meta author="Rafael Serafin Sousa">
   <meta charset="UTF-8">
@@ -8,14 +9,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AlergiasCadápio</title>
 </head>
+
 <body>
-  
-<header th:replace="~{modules/navbar :: navbar}"></header>
 
-<main></main>
+  <header th:replace="~{modules/navbar :: navbar}"></header>
 
-<footer th:replace="~{modules/footer :: footer}"></footer>
+  <main>
+    <h2 class="text-red-700 text-9xl">Restaurantes</h2>
+  </main>
+
+  <footer th:replace="~{modules/footer :: footer}"></footer>
 
 </body>
-</html>
 
+</html>

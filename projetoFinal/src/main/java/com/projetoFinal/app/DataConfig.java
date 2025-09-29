@@ -20,14 +20,15 @@ public class DataConfig {
 
         return dataSource;
     }
+
     @Bean
-    public JpaVendorAdapter jpaVendorAdapter(){
+    public JpaVendorAdapter jpaVendorAdapter() {
         HibernateJpaVendorAdapter adapter = new HibernateJpaVendorAdapter();
         adapter.setDatabase(Database.MYSQL);
-        adapter.setShowSql(true); 
-        adapter.setGenerateDdl(true); 
+        adapter.setShowSql(true);
+        adapter.setGenerateDdl(true);
         adapter.setDatabasePlatform("org.hibernate.dialect.MySQL8Dialect");
-        adapter.setPrepareConnection(true);        
+        adapter.setPrepareConnection(true);
         return adapter;
     }
 }
