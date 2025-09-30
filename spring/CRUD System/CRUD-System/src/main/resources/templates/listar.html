@@ -1,99 +1,110 @@
 <!doctype html>
 <html lang="pt-br" xmlns:th="https://www.thymeleaf.org" xmlns:layout="https://www.ultraq.net.nz/thymeleaf/layout">
-  <head>
-    <meta charset="utf-8">
-    <meta author="Rafael Serafin Sousa">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Sistema de telas</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
-    <!-- TABELA -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-    <!-- FIM TABELA -->
+<head>
+  <meta charset="utf-8">
+  <meta author="Rafael Serafin Sousa">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sistema de telas</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+  <!-- TABELA -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <!-- FIM TABELA -->
   <link rel="stylesheet" href="css/styleCad.css" type="text/css" media="all">
   <link rel="stylesheet" href="css/styleList.css" type="text/css" media="all">
 
-  </head>
-  <body>
+</head>
 
-    <!-- inicio nav bar -->
+<body>
 
-     <nav class="navbar navbar-expand-lg" style="background-color: #9773a196;" data-bs-theme="light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="/"><img src="img/logo.png" alt="icone" width="48" style="margin: -10px 10px;"></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="/">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/cadastrar">Cadastro</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/listar">Usuários</a>
-        </li>
-      </ul>
+  <!-- inicio nav bar -->
+
+  <nav class="navbar navbar-expand-lg" style="background-color: #9773a196;" data-bs-theme="light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/"><img src="img/logo.png" alt="icone" width="48" style="margin: -10px 10px;"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/cadastrar">Cadastro</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/listar">Usuários</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- final nav bar -->
+
+
+  <!-- listar usuarios -->
+  <div class="container-lg">
+    <div class="table-responsive">
+      <div class="table-wrapper">
+        <div class="table-title">
+          <div class="row">
+            <div class="col-sm-8">
+              <h2><b>Usuarios</b></h2>
+            </div>
+            <div class="col-sm-4">
+              <button type="button" class="btn btn-info add-new">
+                <i class="fa fa-plus"></i> Adicionar
+              </button>
+            </div>
+          </div>
+        </div>
+        <table class="table table-bordered" style="table-layout: auto; width: 100%;">
+          <thead>
+            <tr>
+              <th style="width: 5%;">id</th>
+              <th style="min-width: 180px;">nome</th>
+              <th style="min-width: 220px;">email</th>
+              <th style="min-width: 150px;">cpf</th>
+              <th style="width: 100px;">ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr th:each="usuario:${usuarios}">
+              <td><span th:text="${usuario.idPessoa}"></span></td>
+              <td><span th:text="${usuario.nome}"></span></td>
+              <td style="word-wrap: break-word;"><span th:text="${usuario.email}"></span></td>
+              <td><span th:text="${usuario.cpf}"></span></td>
+              <td>
+                <!-- <a class="add" title="adicionar" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
+                            <a class="btn btn-waning" title="editar" role="button" th:ref="${(#mvc.url('CC#alterarUsuario').arg(0, usuario.idPessoa)).build()}" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a> -->
+                <div> <a class="btn btn-waning" role="button" th:href="@{'/alterarUsuario/'+ ${usuario.idPessoa}}"
+                    data-toggle="tooltip"><i class="material-icons">&#xE254</i></a></div>
+                <div> <a class="btn btn-danger" role="button" th:href="@{'/confirmarExclusao/'+ ${usuario.idPessoa}}"
+                    data-toggle="tooltip"><i class="material-icons">&#xE872</i></a></div>
+                <!-- <a class="delete" title="deletar" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a> -->
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
-</nav>
+  </div>
+  <!-- lista -->
+  <script src="js/scriptList.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+</body>
 
-<!-- final nav bar -->
-
-
-<!-- listar usuarios -->
-                     <div class="container-lg">
-    <div class="table-responsive">
-        <div class="table-wrapper">
-            <div class="table-title">
-                <div class="row">
-                    <div class="col-sm-8"><h2><b>Usuarios</b></h2></div>
-                    <div class="col-sm-4">
-                        <button type="button" class="btn btn-info add-new">
-                            <i class="fa fa-plus"></i> Adicionar
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <table class="table table-bordered" style="table-layout: auto; width: 100%;">
-                <thead>
-                    <tr>
-                        <th style="width: 5%;">id</th>
-                        <th style="min-width: 180px;">nome</th>
-                        <th style="min-width: 220px;">email</th>
-                        <th style="min-width: 150px;">cpf</th>
-                        <th style="width: 100px;">ações</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr th:each="usuario:${usuarios}">
-                        <td><span th:text="${usuario.idPessoa}"></span></td>
-                        <td><span th:text="${usuario.nome}"></span></td>
-                        <td style="word-wrap: break-word;"><span th:text="${usuario.email}"></span></td>
-                        <td><span th:text="${usuario.cpf}"></span></td>
-                        <td>
-                            <!-- <a class="add" title="adicionar" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
-                            <a class="btn btn-waning" title="editar" role="button" th:ref="${(#mvc.url('CC#alterarUsuario').arg(0, usuario.idPessoa)).build()}" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a> -->
-                            <div> <a class="btn btn-waning" role="button" th:href="@{'/alterarUsuario/'+ ${usuario.idPessoa}}" data-toggle="tooltip"><i class="material-icons">&#xE254</i></a></div>
-                            <div> <a class="btn btn-danger" role="button" th:href="@{'/confirmarExclusao/'+ ${usuario.idPessoa}}" data-toggle="tooltip"><i class="material-icons">&#xE872</i></a></div>
-                            <!-- <a class="delete" title="deletar" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a> -->
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-</div>
-</div>
-<!-- lista -->
-    <script src="js/scriptList.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-  </body>
 </html>

@@ -1,22 +1,42 @@
-<nav th:fragment="navbar">
-  <header class="bg-white shadow-lg">
-    <div class="container mx-auto px-6 py-4">
-      <div class="flex items-center justify-between">
-        <div class="flex items-center space-x-3">
-          <a href="/" class="fa-solid text-yellow-500 fa-wheat-awn-circle-exclamation text-3xl"></a>
-          <a href="/" class="text-2xl font-bold text-gray-800">ComaSeguro</a>
-        </div>
-        <nav class="hidden md:flex space-x-6">
+<header th:fragment="navbar" class="fixed w-full bg-white shadow-md z-50">
+  <div class="container mx-auto flex justify-between items-center p-4">
 
-          <a href="/" class="text-gray-600 hover:text-blue-600 transition">Início</a>
-          <a href="/restaurantes" class="text-gray-600 hover:text-blue-600 transition">Restaurantes</a>
-          <a href="/cadastrar" class="text-gray-600 hover:text-blue-600 transition duration-300">Clientes</a>
-          <a href="/sobre" class="text-gray-600 hover:text-blue-600 transition duration-300">Sobre</a>
-        </nav>
-        <button class="md:hidden text-gray-600 .navbar-burger">
-          <i class="fas fa-bars text-xl"></i>
-        </button>
-      </div>
+    <div class="flex items-center space-x-2">
+      <a href="/" class="flex items-center">
+        <i class="fa-solid text-yellow-500 fa-wheat-awn-circle-exclamation text-3xl"></i>
+        <h1 class="text-2xl font-bold text-gray-800 pl-2"> ComaSeguro</h1>
+      </a>
     </div>
-  </header>
-</nav>
+
+
+    <!-- menu mobile -->  
+    <button id="menu-btn" class="md:hidden text-gray-800 focus:outline-none">
+      <div id="menu-open" class="fas fa-bars text-xl h-8 w-8">
+      </div>
+      <div id="menu-close" class="hidden h-8 w-8">
+      </div>
+    </button>
+
+    <!-- menu desktop -->
+    <nav class="hidden md:flex space-x-6">
+      <a href="/" class="text-gray-600 hover:text-blue-600 transition">Início</a>
+      <a href="/restaurantes" class="text-gray-600 hover:text-blue-600 transition">Restaurantes</a>
+      <a href="/clientes" class="text-gray-600 hover:text-blue-600 transition duration-300">Clientes</a>
+      <a href="/sobre" class="text-gray-600 hover:text-blue-600 transition duration-300">Sobre</a>
+    </nav>
+  </div>
+
+  <!-- Menu Mobile aberto -->
+  <nav id="mobile-menu" class="md:hidden hidden bg-white shadow-lg">
+    <ul class="flex flex-col space-y-4 p-4">
+      <li><a href="/" class="text-gray-600 hover:text-blue-600 transition">Início</a></li>
+      <li><a href="/restaurantes" class="text-gray-600 hover:text-blue-600 transition">Restaurantes</a></li>
+      <li><a href="/cadastrar" class="text-gray-600 hover:text-blue-600 transition duration-300">Clientes</a></li>
+      <li><a href="/sobre" class="text-gray-600 hover:text-blue-600 transition duration-300">Sobre</a></li>
+      </ul>
+
+
+
+
+  </nav>
+</header>

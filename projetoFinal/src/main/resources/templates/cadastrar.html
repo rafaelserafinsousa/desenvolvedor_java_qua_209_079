@@ -5,10 +5,12 @@
   <meta author="Rafael Serafin Sousa">
   <meta charset="UTF-8">
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script src="/js/mascara.js" defer></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AlergiasCadápio</title>
-  <script src="/navbar" defer></script>
+  <script src="/js/navbar.js" defer></script>
+  <script src="/js/dropcad.js" defer></script>
 </head>
 
 <body>
@@ -16,35 +18,74 @@
   <header th:replace="~{modules/navbar :: navbar}"></header>
 
   <main>
+    <!-- cadastro -->
+    <div class="min-h-screen py-40 flex items-center justify-center bg-gradient-to-b from-blue-50 to-white">
+      <div class="w-full max-w-md rounded-xl shadow-lg glass overflow-visible"
+        style="border-top: 2px solid #FFFFFF75; border-left: 2px solid #FFFFFF75; background: #FFFFFF25; backdrop-filter: blur(4px);">
 
-    <div class="min-h-screen py-40 flex items-center justify-center">
-      <div class="w-full max-w-md bg-white rounded-xl shadow-lg overflow-hidden">
         <div class="p-8">
           <h2 class="text-3xl mb-4 font-semibold">Cadastro</h2>
           <p class="mb-4 text-gray-600">Crie sua conta para continuar</p>
-          <form action="#">
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-              <input type="text" class="border border-gray-400 py-2 px-4 w-full" placeholder="Nome Completo">
+
+          <form method="post">
+            <div class="mt-5">
+              <input type="text" class="border border-gray-400 py-2 px-4 w-full rounded-2xl"
+                placeholder="Nome Completo">
             </div>
             <div class="mt-5">
-              <input type="email" placeholder="Email" class="border border-gray-400 py-2 px-4 w-full">
+              <input type="text" id="cpf" placeholder="000.000.000-00" maxlength="14" minlength="14"
+                class="border border-gray-400 py-2 px-4 w-full rounded-2xl">
             </div>
             <div class="mt-5">
-              <input type="password" placeholder="Password" class="border border-gray-400 py-2 px-4 w-full">
+              <input type="email" placeholder="Email" class="border border-gray-400 py-2 px-4 w-full rounded-2xl">
             </div>
             <div class="mt-5">
-              <input type="password" placeholder="Confirm Password" class="border border-gray-400 py-2 px-4 w-full">
+              <input type="text" id="telefone" placeholder="(00) 00000-0000" maxlength="15" minlength="15"
+                class="border border-gray-400 py-2 px-4 w-full rounded-2xl">
+            </div>
+            <div class="mt-5">
+              <input type="text" placeholder="Endereço" class="border border-gray-400 py-2 px-4 w-full rounded-2xl">
             </div>
             <div class="mt-5 flex items-center">
-              <input type="checkbox" class="border border-gray-400 mr-2">
-              <span>
-                I accept the <a href="#" class="text-purple-500 font-semibold">Terms of Use</a> & <a href="#"
-                  class="text-purple-500 font-semibold">Privacy Policy</a>
-              </span>
+
+              <!-- dropdown -->
+
+              <div class="relative inline-block text-left">
+                <button id="dropdownButton"
+                  class="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50"
+                  type="button">
+                  Select Options
+                  <svg class="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+
+                <!-- Dropdown panel -->
+                <div id="dropdownMenu"
+                  class="hidden origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-10">
+                  <div class="py-1">
+                    <label class="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                      <input type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600" />
+                      <span class="ml-2 text-gray-700">Option 1</span>
+                    </label>
+                    <label class="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                      <input type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600" />
+                      <span class="ml-2 text-gray-700">Option 2</span>
+                    </label>
+                    <label class="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                      <input type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600" />
+                      <span class="ml-2 text-gray-700">Option 3</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <!-- botão -->
             </div>
             <div class="mt-5">
-              <button class="bg-purple-500 w-full text-center text-white py-3 rounded-md hover:bg-purple-600">Register
-                Now</button>
+              <button
+                class="bg-zinc-800 w-full text-center text-white py-3 rounded-md hover:bg-zinc-400 hover:text-zinc-800 ">Registre-se agora</button>
             </div>
           </form>
         </div>
