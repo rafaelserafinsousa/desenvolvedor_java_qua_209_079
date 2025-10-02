@@ -37,14 +37,16 @@
                 class="border border-gray-400 py-2 px-4 w-full rounded-2xl">
             </div>
             <div class="mt-5">
-              <input type="email" name="email" placeholder="Email" class="border border-gray-400 py-2 px-4 w-full rounded-2xl">
-            </div>
-            <div class="mt-5">
-              <input type="text" name="telefone" id="telefone" placeholder="(00) 00000-0000" maxlength="15" minlength="15"
+              <input type="email" name="email" placeholder="Email"
                 class="border border-gray-400 py-2 px-4 w-full rounded-2xl">
             </div>
             <div class="mt-5">
-              <input type="text" name="endereco" placeholder="Endereço" class="border border-gray-400 py-2 px-4 w-full rounded-2xl">
+              <input type="text" name="telefone" id="telefone" placeholder="(00) 00000-0000" maxlength="15"
+                minlength="15" class="border border-gray-400 py-2 px-4 w-full rounded-2xl">
+            </div>
+            <div class="mt-5">
+              <input type="text" name="endereco" placeholder="Endereço"
+                class="border border-gray-400 py-2 px-4 w-full rounded-2xl">
             </div>
             <div class="mt-5 flex items-center">
 
@@ -62,41 +64,61 @@
                 </button>
 
                 <!-- Dropdown panel -->
-                <div id="dropdownMenu"
-                  class="hidden origin-top-right absolute right-0 mt-2 w-56 rounded-2xl shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-10">
-                  <div class="py-1">
-                    <label class="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                      <input type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600" name="alergias" value="gluten" />
-                      <span class="ml-2 text-gray-700">gluten</span>
-                    </label>
-                    <label class="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                      <input type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600" name="alergias" value="leite" />
-                      <span class="ml-2 text-gray-700">leite</span>
-                    </label>
-                    <label class="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                      <input type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600" name="alergias" value="ovos" />
-                      <span class="ml-2 text-gray-700">ovo</span>
-                    </label>
-                    <label class="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                      <input type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600" name="alergias" value="amendoin"/>
-                      <span class="ml-2 text-gray-700">amendoin</span>
-                    </label>
-                    <label class="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                      <input type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600" name="alergias" value="frutosDoMar" />
-                      <span class="ml-2 text-gray-700">frutos do mar</span>
-                    </label>
-                    <label class="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                      <input type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600" name="alergias" value="soja" />
-                      <span class="ml-2 text-gray-700">soja</span>
-                    </label>
+
+
+
+
+                <div class="flex flex-col">
+                  <div id="dropdownMenu"
+                    class="hidden origin-top-right absolute right-0 mt-2 w-56 rounded-2xl shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-10">
+
+                    <div class="py-1">
+                      <label class="flex items-center px-4 py-2 hover:bg-gray-100 hover:rounded-2xl  cursor-pointer">
+                        <input type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600" name="alergias"
+                          value="gluten" />
+                        <span class="ml-2 text-gray-700">gluten</span>
+                      </label>
+                      <label class="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                        <input type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600" name="alergias"
+                          value="leite" />
+                        <span class="ml-2 text-gray-700">leite</span>
+                      </label>
+                      <label class="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                        <input type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600" name="alergias"
+                          value="ovos" />
+                        <span class="ml-2 text-gray-700">ovo</span>
+                      </label>
+                      <label class="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                        <input type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600" name="alergias"
+                          value="amendoin" />
+                        <span class="ml-2 text-gray-700">amendoin</span>
+                      </label>
+                      <label class="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                        <input type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600" name="alergias"
+                          value="frutosDoMar" />
+                        <span class="ml-2 text-gray-700">frutos do mar</span>
+                      </label>
+                      <label class="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                        <input type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600" name="alergias"
+                          value="soja" />
+                        <span class="ml-2 text-gray-700">soja</span>
+                      </label>
+                    </div>
                   </div>
                 </div>
-              </div>
 
+                <div class="mt-5 flex">
+                  <input type="text" name="outraAlergia" placeholder="Alergias"
+                    class="border border-gray-400 py-2 px-4 w-full rounded-2xl">
+                </div>
+
+              </div>
               <!-- botão -->
             </div>
             <div class="mt-5">
-              <button type="submit" class="bg-zinc-800 w-full text-center text-white py-3 rounded-md hover:bg-zinc-400 hover:text-zinc-800">Registre-se agora</button>
+              <button type="submit"
+                class="bg-zinc-800 w-full text-center text-white py-3 rounded-md hover:bg-zinc-400 hover:text-zinc-800">Registre-se
+                agora</button>
             </div>
           </form>
         </div>

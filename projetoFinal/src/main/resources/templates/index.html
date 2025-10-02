@@ -17,19 +17,42 @@
 
   <main class="min-h-screen">
 
-
-     <section class="flex flex-col items-center justify-center text-center min-h-screen bg-gradient-to-b from-blue-50 to-white">
+    <section
+      class="min-h-screen flex flex-col justify-center items-center bg-gradient-to-b from-blue-50 to-white text-center">
       <img src="img/alergias.jpg" alt="alergias" class="w-auto h-100 rounded-4xl shadow-lg mb-4">
-      <h2 class="text-3xl font-bold"> </h2>
-      <p class="max-w-xl m-2 text-gray-600">
-
+      <p class="text-lg md:text-xl text-gray-700 max-w-2xl mb-8">
+        O <strong>Coma Seguro</strong> é um app que conecta você a restaurantes confiáveis, com rígidos padrões de
+        higiene e qualidade.
+        Peça com tranquilidade e receba suas refeições com segurança, sabor e rapidez.
       </p>
-      <div class="mt-6 space-x-4">
+      <div class="flex flex-wrap justify-center gap-4">
         <a href="/cadastrar" class="px-6 py-2 bg-gray-800 text-white rounded-xl shadow hover:bg-gray-200 hover:text-gray-800  border-b-gray-800">Cadastrar-se</a>
-        <a href="/restaurantes" class="px-6 py-2 border border-zinc-700 text-zinc-700 rounded-xl hover:bg-zinc-300">Ir para
-          Restaurantes</a>
+        <a href="/restaurantes" class="px-6 py-2 border border-zinc-700 text-zinc-700 rounded-xl hover:bg-zinc-300">Ir para Restaurantes</a>
       </div>
     </section>
+
+    <section class="py-16 bg-white">
+      <div class="max-w-6xl mx-auto px-4 text-center">
+        <h3 class="text-3xl font-bold mb-10 text-zinc-800">Por que usar o Coma Seguro?</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-blue-100 p-6 rounded-lg shadow hover:shadow-md transition">
+            <h4 class="text-xl font-semibold mb-2">Segurança Alimentar</h4>
+            <p>Selecionamos restaurantes que seguem boas práticas de higiene e manipulação de alimentos.</p>
+          </div>
+          <div class="bg-blue-100 p-6 rounded-lg shadow hover:shadow-md transition">
+            <h4 class="text-xl font-semibold mb-2">⏱️ Entrega Rápida</h4>
+            <p>Peça sua comida de forma rápida no conforto de casa.</p>
+          </div>
+          <div class="bg-blue-100 p-6 rounded-lg shadow hover:shadow-md transition">
+            <h4 class="text-xl font-semibold mb-2">Site Intuitivo</h4>
+            <p>Uma experiência simples, rápida e segura para fazer seus pedidos.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
   </main>
 
   <footer th:replace="~{modules/footer :: footer}"></footer>

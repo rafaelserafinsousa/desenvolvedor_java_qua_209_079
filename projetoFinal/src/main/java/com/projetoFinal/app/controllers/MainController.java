@@ -14,6 +14,11 @@ public class MainController {
     public String restaurantes() {
         return ("restaurantes");
     }
+
+    @RequestMapping("/sobre")
+    public String sobre() {
+        return ("sobre");
+    }
 }
 
 

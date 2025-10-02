@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="https://thymeleaf.org" xmlns:layout="https://ultraq.net.nz/thymeleaf/layout">
+
+<head>
+  <meta author="Rafael Serafin Sousa">
+  <meta charset="UTF-8">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="/js/navbar.js" defer></script>
+  <title>AlergiasCadápio</title>
+</head>
+
+<body>
+
+  <header th:replace="~{modules/navbar :: navbar}"></header>
+
+  <main>
+
+    <section
+      class="flex flex-row items-center justify-center text-center min-h-screen bg-gradient-to-b from-blue-100 to-white">
+      <div class="h-150 max-w-md rounded-xl shadow-lg glass overflow-visible items-center" style="border-top: 2px solid #FFFFFF75; border-left: 2px solid #FFFFFF75; background: #FFFFFF25; backdrop-filter: blur(4px);">
+        <div class="max-w-3xl">
+          <h1 class="text-4xl font-bold text-zinc-700 mb-6">Sobre o Coma Seguro</h1>
+          <p class="text-lg text-gray-700 mb-4">
+            O <strong>Coma Seguro</strong> nasceu com a missão de oferecer uma nova forma de pedir comida: mais
+            consciente, mais higiênica e mais segura.
+            Através de uma curadoria rigorosa, garantimos que todos os restaurantes disponíveis em nosso app seguem boas
+            práticas de segurança alimentar.
+          </p>
+          <p class="text-lg text-gray-700 mb-4">
+            Além disso, pensamos em cada detalhe da experiência do usuário, desde a interface até o momento em que a
+            refeição chega à sua porta.
+            Nossa prioridade é sua saúde, satisfação e confiança.
+          </p>
+          <p class="text-lg text-gray-700 mb-8">
+            Estamos comprometidos com a transparência, inovação e melhoria contínua. Coma bem. Coma seguro.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer th:replace="~{modules/footer :: footer}"></footer>
+
+</body>
+
+</html>
