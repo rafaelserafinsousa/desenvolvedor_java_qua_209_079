@@ -1,10 +1,16 @@
 package com.projetoFinal.app.models;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 
 
 @Entity
@@ -12,17 +18,25 @@ public class Usuario implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
  
     private long idUsuario;
     private String nome;
     private String cpf;
     private String email;
     private String telefone;
-    private String endereço;
+    private String endereco;
+
+    @ManyToMany
+    @JoinTable(
+        name="usuario_alergia", joinColumns = @JoinColumn(name = "id_usuario"), inverseJoinColumns = @JoinColumn(name = "id_alergia")
+    )
+    private List<Alergia> alergias = new ArrayList<>();
+
 
     public Usuario() {
     }
+
 
     public long getIdUsuario() {
         return this.idUsuario;
@@ -64,12 +78,20 @@ public class Usuario implements Serializable {
         this.telefone = telefone;
     }
 
-    public String getEndereço() {
-        return this.endereço;
+    public String getEndereco() {
+        return this.endereco;
     }
 
-    public void setEndereço(String endereço) {
-        this.endereço = endereço;
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
     }
 
+    public List<Alergia> getAlergias() {
+        return this.alergias;
+    }
+
+    public void setAlergias(List<Alergia> alergias) {
+        this.alergias = alergias;
+    }
+    
 }

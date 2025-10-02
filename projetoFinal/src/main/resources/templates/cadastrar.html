@@ -27,24 +27,24 @@
           <h2 class="text-3xl mb-4 font-semibold">Cadastro</h2>
           <p class="mb-4 text-gray-600">Crie sua conta para continuar</p>
 
-          <form method="post">
+          <form method="post" th:action="@{/cadastrar}">
             <div class="mt-5">
-              <input type="text" class="border border-gray-400 py-2 px-4 w-full rounded-2xl"
+              <input type="text" name="nome" class="border border-gray-400 py-2 px-4 w-full rounded-2xl"
                 placeholder="Nome Completo">
             </div>
             <div class="mt-5">
-              <input type="text" id="cpf" placeholder="000.000.000-00" maxlength="14" minlength="14"
+              <input type="text" name="cpf" id="cpf" placeholder="000.000.000-00" maxlength="14" minlength="14"
                 class="border border-gray-400 py-2 px-4 w-full rounded-2xl">
             </div>
             <div class="mt-5">
-              <input type="email" placeholder="Email" class="border border-gray-400 py-2 px-4 w-full rounded-2xl">
+              <input type="email" name="email" placeholder="Email" class="border border-gray-400 py-2 px-4 w-full rounded-2xl">
             </div>
             <div class="mt-5">
-              <input type="text" id="telefone" placeholder="(00) 00000-0000" maxlength="15" minlength="15"
+              <input type="text" name="telefone" id="telefone" placeholder="(00) 00000-0000" maxlength="15" minlength="15"
                 class="border border-gray-400 py-2 px-4 w-full rounded-2xl">
             </div>
             <div class="mt-5">
-              <input type="text" placeholder="Endereço" class="border border-gray-400 py-2 px-4 w-full rounded-2xl">
+              <input type="text" name="endereco" placeholder="Endereço" class="border border-gray-400 py-2 px-4 w-full rounded-2xl">
             </div>
             <div class="mt-5 flex items-center">
 
@@ -63,19 +63,31 @@
 
                 <!-- Dropdown panel -->
                 <div id="dropdownMenu"
-                  class="hidden origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-10">
+                  class="hidden origin-top-right absolute right-0 mt-2 w-56 rounded-2xl shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-10">
                   <div class="py-1">
                     <label class="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                      <input type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600" />
-                      <span class="ml-2 text-gray-700">Option 1</span>
+                      <input type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600" name="alergias" value="gluten" />
+                      <span class="ml-2 text-gray-700">gluten</span>
                     </label>
                     <label class="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                      <input type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600" />
-                      <span class="ml-2 text-gray-700">Option 2</span>
+                      <input type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600" name="alergias" value="leite" />
+                      <span class="ml-2 text-gray-700">leite</span>
                     </label>
                     <label class="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                      <input type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600" />
-                      <span class="ml-2 text-gray-700">Option 3</span>
+                      <input type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600" name="alergias" value="ovos" />
+                      <span class="ml-2 text-gray-700">ovo</span>
+                    </label>
+                    <label class="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                      <input type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600" name="alergias" value="amendoin"/>
+                      <span class="ml-2 text-gray-700">amendoin</span>
+                    </label>
+                    <label class="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                      <input type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600" name="alergias" value="frutosDoMar" />
+                      <span class="ml-2 text-gray-700">frutos do mar</span>
+                    </label>
+                    <label class="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                      <input type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600" name="alergias" value="soja" />
+                      <span class="ml-2 text-gray-700">soja</span>
                     </label>
                   </div>
                 </div>
@@ -84,8 +96,7 @@
               <!-- botão -->
             </div>
             <div class="mt-5">
-              <button
-                class="bg-zinc-800 w-full text-center text-white py-3 rounded-md hover:bg-zinc-400 hover:text-zinc-800 ">Registre-se agora</button>
+              <button type="submit" class="bg-zinc-800 w-full text-center text-white py-3 rounded-md hover:bg-zinc-400 hover:text-zinc-800">Registre-se agora</button>
             </div>
           </form>
         </div>
