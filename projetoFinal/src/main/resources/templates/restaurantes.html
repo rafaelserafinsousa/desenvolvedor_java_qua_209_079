@@ -16,12 +16,30 @@
   <header th:replace="~{modules/navbar :: navbar}"></header>
 
   <main>
-     <section class="flex flex-col items-center justify-center text-center min-h-screen bg-gradient-to-b from-blue-100 to-white">
-      <iframe src="https://www.ifood.com.br/" frameborder="0"></iframe>
-    </section>
-  </main>
+    <section class="p-30">
+      <div class="w-full max-w-4xl">
+        <div th:if="${#lists.isEmpty(pratos)}" class="bg-red-100 text-red-600 p-4 rounded-2xl shadow">
+          Nenhum prato disponível para suas restrições 😢
+        </div>
 
-  <footer th:replace="~{modules/footer :: footer}"></footer>
+        <div th:each="prato : ${pratos}" class="bg-white rounded-2xl shadow-md p-6 mb-4">
+          <h2 class="text-xl font-bold text-gray-800" th:text="${prato.nome}"></h2>
+          <p class="text-gray-600 mt-2">
+            Ingredientes:
+            <span th:each="ing : ${prato.ingredientes}"
+              class="inline-block bg-indigo-100 text-indigo-700 px-2 py-1 rounded-full text-sm mr-2 mb-2"
+              th:text="${ing.nome}"></span>
+          </p>
+        </div>
+      </div>
+    </section>
+</body>
+
+</html>
+
+</main>
+
+<footer th:replace="~{modules/footer :: footer}"></footer>
 
 </body>
 

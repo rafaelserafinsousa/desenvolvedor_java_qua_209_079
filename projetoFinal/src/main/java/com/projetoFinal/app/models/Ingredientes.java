@@ -11,29 +11,26 @@ import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
 
 @Entity
-public class Igredientes implements Serializable{
+public class Ingredientes implements Serializable{
     private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long idIgrediente;
+    private long idIngrediente;
     private String nome;
 
-    @ManyToMany
-    private List<Alergia> alergias = new ArrayList<>();
+   @ManyToMany(mappedBy = "ingredientes")
+    private List<Pratos> pratos = new ArrayList<>();
 
+    public Ingredientes() {}
 
-    public Igredientes() {
-    }
-
-
-   public Long getId() { return idIgrediente; }
-    public void setId(Long idIgrediente) { this.idIgrediente = idIgrediente; }
+    public Long getId() { return idIngrediente; }
+    public void setId(Long idIngrediente) { this.idIngrediente = idIngrediente; }
 
     public String getNome() { return nome; }
     public void setNome(String nome) { this.nome = nome; }
 
-    public List<Alergia> getAlergias() { return alergias; }
-    public void setAlergias(List<Alergia> alergias) { this.alergias = alergias; }
+    public List<Pratos> getPratos() { return pratos; }
+    public void setPratos(List<Pratos> pratos) { this.pratos = pratos; }
 }
 
