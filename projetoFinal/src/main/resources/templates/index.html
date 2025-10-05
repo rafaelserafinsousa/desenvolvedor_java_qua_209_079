@@ -16,47 +16,39 @@
   <header th:replace="~{modules/navbar :: navbar}"></header>
 
   <main class="min-h-screen">
+ 
 
-    <section
-      class="min-h-screen flex flex-col justify-center items-center bg-gradient-to-b from-blue-50 to-white text-center">
-      <img src="img/alergias.jpg" alt="alergias" class="w-auto h-100 rounded-4xl shadow-lg mb-4">
-      <p class="text-lg md:text-xl text-gray-700 max-w-2xl mb-8">
-        O <strong>Coma Seguro</strong> é um app que conecta você a restaurantes confiáveis, com rígidos padrões de
-        higiene e qualidade.
-        Peça com tranquilidade e receba suas refeições com segurança, sabor e rapidez.
-      </p>
-      <div class="flex flex-wrap justify-center gap-4">
-        <a href="/cadastrar" class="px-6 py-2 bg-gray-800 text-white rounded-xl shadow hover:bg-gray-200 hover:text-gray-800  border-b-gray-800">Cadastrar-se</a>
-        <a href="/restaurantes" class="px-6 py-2 border border-zinc-700 text-zinc-700 rounded-xl hover:bg-zinc-300">Ir para Restaurantes</a>
-      </div>
-    </section>
 
-    <section class="py-16 bg-white">
-      <div class="max-w-6xl mx-auto px-4 text-center">
-        <h3 class="text-3xl font-bold mb-10 text-zinc-800">Por que usar o Coma Seguro?</h3>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div class="bg-blue-100 p-6 rounded-lg shadow hover:shadow-md transition">
-            <h4 class="text-xl font-semibold mb-2">Segurança Alimentar</h4>
-            <p>Selecionamos restaurantes que seguem boas práticas de higiene e manipulação de alimentos.</p>
-          </div>
-          <div class="bg-blue-100 p-6 rounded-lg shadow hover:shadow-md transition">
-            <h4 class="text-xl font-semibold mb-2">⏱️ Entrega Rápida</h4>
-            <p>Peça sua comida de forma rápida no conforto de casa.</p>
-          </div>
-          <div class="bg-blue-100 p-6 rounded-lg shadow hover:shadow-md transition">
-            <h4 class="text-xl font-semibold mb-2">Site Intuitivo</h4>
-            <p>Uma experiência simples, rápida e segura para fazer seus pedidos.</p>
-          </div>
+    <section class="hero-bg min-h-screen flex items-center justify-center text-cyan-900  bg-gradient-to-b from-blue-50 to-white text-center ">
+        <div class="hero-content p-6 md:p-12 max-w-4xl mx-auto">
+            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4 drop-shadow-lg">
+                Comer com segurança nunca foi tão fácil.
+            </h1>
+            <p class="text-lg md:text-xl font-light mb-8 max-w-2xl mx-auto drop-shadow-md">
+                No Coma Seguro, você nos diz suas alergias e nós mostramos apenas o que você pode comer. Chega de surpresas e preocupações!
+            </p>
+
+            <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4 mb-12">
+                <a href="/cadastrar" class="bg-teal-600 hover:bg-teal-700 text-zinc-100 font-bold py-3 px-8 rounded-full shadow-lg transition-transform transform hover:scale-105 duration-300">
+                    Cadastre-se Agora
+                </a>
+                <a href="/restaurantes" class="bg-white hover:bg-gray-100 text-teal-600 font-bold py-3 px-8 rounded-full shadow-lg transition-transform transform hover:scale-105 duration-300">
+                    Encontre Restaurantes
+                </a>
+            </div>
+
+            <div class="bg-white bg-opacity-20 backdrop-blur-sm p-6 rounded-xl shadow-lg inline-block">
+                <p class="text-lg md:text-xl font-semibold mb-2 text-black">Junte-se a mais de</p>
+                <div class="text-4xl md:text-6xl font-extrabold text-black" id="contador-usuarios">0</div>
+                <p class="text-lg font-light mt-2">pessoas que comem com segurança conosco!</p>
+            </div>
         </div>
-      </div>
-    </section>
+        </section>
 
-
-
-  </main>
-
+  
+  </main>  
+  
   <footer th:replace="~{modules/footer :: footer}"></footer>
 
 </body>
-
 </html>

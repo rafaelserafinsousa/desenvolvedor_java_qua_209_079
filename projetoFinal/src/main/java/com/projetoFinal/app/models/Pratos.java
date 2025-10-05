@@ -32,7 +32,14 @@ public class Pratos implements Serializable {
 
     @ManyToMany
     @JoinTable(name = "prato_ingrediente", joinColumns = @JoinColumn(name = "prato_id"), inverseJoinColumns = @JoinColumn(name = "ingrediente_id"))
-    private List<Ingredientes> ingredientes = new ArrayList<>();
+   private List<Ingredientes> ingredientes = new ArrayList<>();
+
+    public Pratos() {}
+
+    public Pratos(String nome, Restaurante restaurante) {
+        this.nome = nome;
+        this.restaurante = restaurante;
+    }
 
     public long getId_Pratos() {
         return this.id_Pratos;
@@ -58,7 +65,12 @@ public class Pratos implements Serializable {
         this.ingredientes = ingredientes;
     }
 
+    public Restaurante getRestaurante() {
+        return restaurante;
+    }
+
+    public void setRestaurante(Restaurante restaurante) {
+        this.restaurante = restaurante;
+    }
+
 }
-
-
-

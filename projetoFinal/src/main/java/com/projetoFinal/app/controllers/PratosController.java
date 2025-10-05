@@ -30,7 +30,6 @@ public class PratosController {
 
         List<Pratos> todosPratos = pratosRepository.findAll();
 
-        // filtra pratos seguros
         List<Pratos> pratosSeguros = todosPratos.stream()
                 .filter(prato -> usuario.getAlergias().stream()
                         .noneMatch(alergia ->
@@ -47,4 +46,3 @@ public class PratosController {
         return "restaurantes";
     }
 }
-

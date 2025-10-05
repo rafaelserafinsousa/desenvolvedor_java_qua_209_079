@@ -85,7 +85,7 @@ public class Usuario implements Serializable {
     }
 
     public List<Alergia> getAlergias() {
-        return this.alergias;
+        return alergias;
     }
 
     public void setAlergias(List<Alergia> alergias) {

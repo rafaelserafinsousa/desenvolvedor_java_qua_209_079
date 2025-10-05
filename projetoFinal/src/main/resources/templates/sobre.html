@@ -15,30 +15,78 @@
 
   <header th:replace="~{modules/navbar :: navbar}"></header>
 
-  <main>
+  
+  <main class="container mx-auto px-6 py-16">
 
-    <section
-      class="flex flex-row items-center justify-center text-center min-h-screen bg-gradient-to-b from-blue-100 to-white">
-      <div class="h-150 max-w-md rounded-xl shadow-lg glass overflow-visible items-center" style="border-top: 2px solid #FFFFFF75; border-left: 2px solid #FFFFFF75; background: #FFFFFF25; backdrop-filter: blur(4px);">
-        <div class="max-w-3xl">
-          <h1 class="text-4xl font-bold text-zinc-700 mb-6">Sobre o Coma Seguro</h1>
-          <p class="text-lg text-gray-700 mb-4">
-            O <strong>Coma Seguro</strong> nasceu com a missão de oferecer uma nova forma de pedir comida: mais
-            consciente, mais higiênica e mais segura.
-            Através de uma curadoria rigorosa, garantimos que todos os restaurantes disponíveis em nosso app seguem boas
-            práticas de segurança alimentar.
-          </p>
-          <p class="text-lg text-gray-700 mb-4">
-            Além disso, pensamos em cada detalhe da experiência do usuário, desde a interface até o momento em que a
-            refeição chega à sua porta.
-            Nossa prioridade é sua saúde, satisfação e confiança.
-          </p>
-          <p class="text-lg text-gray-700 mb-8">
-            Estamos comprometidos com a transparência, inovação e melhoria contínua. Coma bem. Coma seguro.
-          </p>
-        </div>
-      </div>
-    </section>
+        <section class="text-center max-w-4xl mx-auto pt-40" >
+            <h1 class="text-4xl md:text-5xl font-extrabold text-teal-800 mb-6">Nossa História: Coma Seguro</h1>
+            <p class="text-lg text-gray-600 mb-8">
+                O Coma Seguro com uma missão simples, mas poderosa: devolver a liberdade de escolha a quem vive com alergias alimentares. Saber o que se pode comer fora de casa não deveria ser um desafio constante, cheio de ansiedade e riscos.
+            </p>
+            <p class="text-lg text-gray-600">
+                Nossa plataforma nasceu da experiência de pessoas que entendem as dificuldades de navegar por um menu com restrições. Acreditamos que, com a tecnologia certa, podemos transformar a incerteza em confiança e o medo em prazer.
+            </p>
+        </section>
+
+        <hr class="my-16 border-gray-200">
+
+        <section class="grid md:grid-cols-2 gap-12 items-start">
+            <div>
+                <h2 class="text-3xl font-bold text-teal-700 mb-4">Nossa Missão</h2>
+                <p class="text-gray-600 leading-relaxed">
+                    Facilitar a vida de pessoas com alergias e intolerâncias alimentares, oferecendo uma ferramenta precisa e segura que mostra opções de alimentos e restaurantes compatíveis com suas restrições. Queremos que cada refeição seja uma experiência positiva, livre de preocupações.
+                </p>
+            </div>
+            <div>
+                <h2 class="text-3xl font-bold text-teal-700 mb-4">Nossa Visão</h2>
+                <p class="text-gray-600 leading-relaxed">
+                    Ser a plataforma líder global em segurança alimentar para alérgicos, criando uma comunidade onde a informação é clara, acessível e confiável. Visualizamos um futuro onde todos possam desfrutar de uma refeição saborosa e segura, em qualquer lugar.
+                </p>
+            </div>
+        </section>
+
+        <hr class="my-16 border-gray-200">
+
+        <section class="text-center">
+            <h2 class="text-3xl font-bold text-teal-700 mb-8">Como Funciona?</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <div class="text-teal-600 text-4xl mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-xl mb-2">1. Você se cadastra</h3>
+                    <p class="text-gray-500">
+                        É rápido e fácil. Informe suas alergias e intolerâncias alimentares.
+                    </p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <div class="text-teal-600 text-4xl mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-xl mb-2">2. Nós filtramos para você</h3>
+                    <p class="text-gray-500">
+                        Nossa plataforma cruza suas informações com os ingredientes dos pratos.
+                    </p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <div class="text-teal-600 text-4xl mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 18a1 1 0 00.996 1.139h14.008a1 1 0 00.996-1.139L21 6l-3-1m0 0l-1.34-5.36a1 1 0 00-.95-1.14h-4.01a1 1 0 00-.95 1.14L9 1zm7-5h-4l1 4h2l1-4zm4.613-2.19a.5.5 0 00-.317.067L19 2.5l-2.484-.525.952-3.808-.952-3.808 2.484-.525-2.684-2.684.317-.067.634.317L19 2.5l2.484.525-.952 3.808zM12 2v6m0 0V2m0 6a2 2 0 100-4 2 2 0 000 4zm0 0h.01" />
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-xl mb-2">3. Veja o que é seguro comer</h3>
+                    <p class="text-gray-500">
+                        Explore pratos e restaurantes que são 100% seguros para você, sem surpresas.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+
   </main>
 
   <footer th:replace="~{modules/footer :: footer}"></footer>

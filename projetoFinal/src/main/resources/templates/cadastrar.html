@@ -24,8 +24,8 @@
         style="border-top: 2px solid #FFFFFF75; border-left: 2px solid #FFFFFF75; background: #FFFFFF25; backdrop-filter: blur(4px);">
 
         <div class="p-8">
-          <h2 class="text-3xl mb-4 font-semibold">Cadastro</h2>
-          <p class="mb-4 text-gray-600">Crie sua conta para continuar</p>
+          <h2 class="text-3xl mb-4 font-semibold text-cyan-900">Cadastro</h2>
+          <p class="mb-4 text-cyan-900">Crie sua conta para continuar</p>
 
           <form method="post" th:action="@{/cadastrar}">
             <div class="mt-5">
@@ -50,22 +50,16 @@
             </div>
             <div class="mt-5 flex items-center">
 
-              <!-- dropdown -->
-
               <div class="relative inline-block text-left">
                 <button id="dropdownButton"
-                  class="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50"
+                  class="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-cyan-900 hover:bg-gray-50"
                   type="button">
-                  Select Options
+                  Selecione suas alergias
                   <svg class="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                     stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                   </svg>
                 </button>
-
-                <!-- Dropdown panel -->
-
-
 
 
                 <div class="flex flex-col">
@@ -117,8 +111,7 @@
             </div>
             <div class="mt-5">
               <button type="submit"
-                class="bg-zinc-800 w-full text-center text-white py-3 rounded-md hover:bg-zinc-400 hover:text-zinc-800">Registre-se
-                agora</button>
+                class="bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 shadow-lg transition-transform transform hover:scale-105 duration-300 w-full text-center rounded-md">Registre-se agora</button>
             </div>
           </form>
         </div>

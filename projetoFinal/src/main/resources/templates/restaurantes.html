@@ -17,25 +17,34 @@
 
   <main>
     <section class="p-30">
-      <div class="w-full max-w-4xl">
-        <div th:if="${#lists.isEmpty(pratos)}" class="bg-red-100 text-red-600 p-4 rounded-2xl shadow">
-          Nenhum prato disponível para suas restrições 😢
-        </div>
 
-        <div th:each="prato : ${pratos}" class="bg-white rounded-2xl shadow-md p-6 mb-4">
-          <h2 class="text-xl font-bold text-gray-800" th:text="${prato.nome}"></h2>
-          <p class="text-gray-600 mt-2">
-            Ingredientes:
-            <span th:each="ing : ${prato.ingredientes}"
-              class="inline-block bg-indigo-100 text-indigo-700 px-2 py-1 rounded-full text-sm mr-2 mb-2"
-              th:text="${ing.nome}"></span>
-          </p>
-        </div>
+  <div class="max-w-5xl mx-auto py-10 px-4">
+    <h1 class="text-3xl font-bold text-center text-pink-700 mb-10">
+      🍽️ Pratos Seguros para <span th:text="${usuario.nome}"></span>
+    </h1>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Loop dos restaurantes -->
+      <div th:each="restaurante : ${restaurantes}"
+           class="bg-white shadow-lg rounded-2xl p-6 hover:shadow-2xl transition-shadow duration-200">
+
+        <h2 class="text-xl font-semibold text-pink-600 mb-4">
+          🏠 <span th:text="${restaurante.nome}"></span>
+        </h2>
+
+        <ul class="space-y-2">
+          <!-- Loop dos pratos seguros -->
+          <li th:each="prato : ${restaurante.pratosSeguros}"
+              class="flex items-center gap-2 text-gray-700">
+            <span class="text-lg">🍴</span>
+            <span th:text="${prato.nome}"></span>
+          </li>
+        </ul>
       </div>
-    </section>
-</body>
+    </div>
+  </div>
 
-</html>
+    </section>
 
 </main>
 
