@@ -1,68 +1,48 @@
 package com.projetoFinal.app.models;
 
+import jakarta.persistence.*;
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
 
-
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-
 @Entity
-public class Pratos implements Serializable {
+@Table(name = "pratos")
+
+public class Pratos implements Serializable { 
     private static final long serialVersionUID = 1L;
-
-
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id_Pratos;
+    @Column(name = "id_prato")
+    private Long idPrato;
 
     private String nome;
 
-    @ManyToOne
-    @JoinColumn(name = "restaurante_id")
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "id_restaurante") 
     private Restaurante restaurante;
+    
+    @ManyToMany(fetch = FetchType.EAGER) 
+    @JoinTable(
+        name = "prato_ingrediente",
+        joinColumns = @JoinColumn(name = "prato_id"),
+        inverseJoinColumns = @JoinColumn(name = "ingrediente_id")
+    )
+    private List<Ingrediente> ingredientes;
 
-    @ManyToMany
-    @JoinTable(name = "prato_ingrediente", joinColumns = @JoinColumn(name = "prato_id"), inverseJoinColumns = @JoinColumn(name = "ingrediente_id"))
-   private List<Ingredientes> ingredientes = new ArrayList<>();
-
-    public Pratos() {}
-
-    public Pratos(String nome, Restaurante restaurante) {
-        this.nome = nome;
-        this.restaurante = restaurante;
+    public Long getIdPrato() {
+        return idPrato;
     }
 
-    public long getId_Pratos() {
-        return this.id_Pratos;
-    }
-
-    public void setId_Pratos(long id_Pratos) {
-        this.id_Pratos = id_Pratos;
+    public void setIdPrato(Long idPrato) {
+        this.idPrato = idPrato;
     }
 
     public String getNome() {
-        return this.nome;
+        return nome;
     }
 
     public void setNome(String nome) {
         this.nome = nome;
-    }
-
-    public List<Ingredientes> getIngredientes() {
-        return this.ingredientes;
-    }
-
-    public void setIngredientes(List<Ingredientes> ingredientes) {
-        this.ingredientes = ingredientes;
     }
 
     public Restaurante getRestaurante() {
@@ -73,4 +53,11 @@ public class Pratos implements Serializable {
         this.restaurante = restaurante;
     }
 
+    public List<Ingrediente> getIngredientes() {
+        return ingredientes;
+    }
+
+    public void setIngredientes(List<Ingrediente> ingredientes) {
+        this.ingredientes = ingredientes;
+    }
 }

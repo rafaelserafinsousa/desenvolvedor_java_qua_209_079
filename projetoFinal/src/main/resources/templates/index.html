@@ -15,35 +15,36 @@
 
   <header th:replace="~{modules/navbar :: navbar}"></header>
 
-  <main class="min-h-screen">
- 
+  <main class="bg-gradient-to-b from-blue-50 to-white text-cyan-900 min-h-screen">
 
+     <section class="min-h-screen flex flex-col items-center justify-center lg:flex-row p-20">
+        <section class="w-full p-20 md:p-12 lg:p-16 flex flex-col justify-center items-center lg:items-start text-center lg:text-left ">
+            <div class="max-w-xl mx-auto lg:mx-0">
+                <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4 drop-shadow-lg">
+                    Comer com segurança nunca foi tão fácil.
+                </h1>
+                <p class="text-lg md:text-xl font-light mb-8 drop-shadow-md">
+                    No Coma Seguro, você nos diz suas alergias e nós mostramos apenas o que você pode comer. Chega de surpresas e preocupações!
+                </p>
 
-    <section class="hero-bg min-h-screen flex items-center justify-center text-cyan-900  bg-gradient-to-b from-blue-50 to-white text-center ">
-        <div class="hero-content p-6 md:p-12 max-w-4xl mx-auto">
-            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4 drop-shadow-lg">
-                Comer com segurança nunca foi tão fácil.
-            </h1>
-            <p class="text-lg md:text-xl font-light mb-8 max-w-2xl mx-auto drop-shadow-md">
-                No Coma Seguro, você nos diz suas alergias e nós mostramos apenas o que você pode comer. Chega de surpresas e preocupações!
-            </p>
-
-            <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4 mb-12">
-                <a href="/cadastrar" class="bg-teal-600 hover:bg-teal-700 text-zinc-100 font-bold py-3 px-8 rounded-full shadow-lg transition-transform transform hover:scale-105 duration-300">
-                    Cadastre-se Agora
-                </a>
-                <a href="/restaurantes" class="bg-white hover:bg-gray-100 text-teal-600 font-bold py-3 px-8 rounded-full shadow-lg transition-transform transform hover:scale-105 duration-300">
-                    Encontre Restaurantes
-                </a>
+                <div class="flex flex-col sm:flex-row justify-center lg:justify-start items-center space-y-4 sm:space-y-0 sm:space-x-4 mb-12 w-full max-w-sm mx-auto">
+                    <a href="/cadastrar" class="w-full sm:w-auto bg-teal-600 hover:bg-teal-700 text-zinc-100 font-bold py-3 px-8 rounded-full shadow-lg transition-transform transform hover:scale-105 duration-300">
+                        Cadastre-se
+                    </a>
+                    <a href="/login" class="w-full sm:w-auto bg-white hover:bg-gray-100 text-teal-600 font-bold py-3 px-8 rounded-full shadow-lg transition-transform transform hover:scale-105 duration-300">
+                        Restaurantes
+                    </a>
+                </div>
             </div>
-
-            <div class="bg-white bg-opacity-20 backdrop-blur-sm p-6 rounded-xl shadow-lg inline-block">
-                <p class="text-lg md:text-xl font-semibold mb-2 text-black">Junte-se a mais de</p>
-                <div class="text-4xl md:text-6xl font-extrabold text-black" id="contador-usuarios">0</div>
-                <p class="text-lg font-light mt-2">pessoas que comem com segurança conosco!</p>
-            </div>
-        </div>
         </section>
+
+        <div class="w-full min-h-[40vh] lg:min-h-screen hidden lg:block">
+            <img src="/img/alergias.jpg"
+                 alt="Família feliz desfrutando de uma refeição saudável"
+                 class="w-full h-full object-cover">
+        </div>
+     </section>
+
 
   
   </main>  

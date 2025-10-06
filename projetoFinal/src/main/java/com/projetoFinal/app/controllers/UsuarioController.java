@@ -78,14 +78,7 @@ public String salvarUsuario(
     usuario.setAlergias(listaAlergias);
     usuarioRepository.save(usuario);
 
-    return "redirect:/clientes";
+    return "redirect:/";
 }
 
-
-    @RequestMapping("/clientes")
-    public ModelAndView listar() {
-        ModelAndView mv = new ModelAndView("clientes");
-        mv.addObject("usuarios", usuarioRepository.findAll());
-        return mv;
-    }
 }

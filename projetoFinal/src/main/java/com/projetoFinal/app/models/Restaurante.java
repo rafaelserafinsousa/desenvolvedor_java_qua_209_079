@@ -11,7 +11,7 @@ public class Restaurante implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_restaurante")
+    @Column(name = "idRestaurante")
     private long idRestaurante;
     private String nome;
     private String endereco;
